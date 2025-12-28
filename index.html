@@ -125,6 +125,71 @@
           </div>
         </div>
       </div>
+      <!-- Мобильное меню (бургер и панель) -->
+<div class="mobile-menu">
+  <!-- Бургер-кнопка -->
+  <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+    <span class="burger__line"></span>
+    <span class="burger__line"></span>
+    <span class="burger__line"></span>
+  </button>
+  
+  <!-- Панель мобильного меню -->
+  <div class="mobile-panel" id="mobilePanel">
+    <div class="mobile-panel__header">
+      <a href="/" class="mobile-logo">
+        <img src="/images/header/drupal-coder.svg" alt="Drupal-coder">
+      </a>
+      <button class="mobile-close" id="mobileClose" aria-label="Закрыть меню">
+        &times;
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <a href="#" class="mobile-nav__item">ПОДДЕРЖКА САЙТОВ</a>
+      
+      <div class="mobile-dropdown">
+        <button class="mobile-nav__item mobile-nav__item--dropdown">
+          АДМИНИСТРИРОВАНИЕ
+          <span class="mobile-dropdown__arrow">▾</span>
+        </button>
+        <div class="mobile-dropdown__content">
+          <a href="#services" class="mobile-dropdown__item">МИГРАЦИЯ</a>
+          <a href="#support" class="mobile-dropdown__item">БЭКАПЫ</a>
+          <a href="#plans" class="mobile-dropdown__item">АУДИТ БЕЗОПАСНОСТИ</a>
+          <a href="#cases" class="mobile-dropdown__item">ОПТИМИЗАЦИЯ СКОРОСТИ</a>
+          <a href="#team" class="mobile-dropdown__item">ПЕРЕЕЗД НА HTTPS</a>
+        </div>
+      </div>
+      
+      <a href="#" class="mobile-nav__item">ТАРИФЫ</a>
+      <a href="#" class="mobile-nav__item">НАШИ РАБОТЫ</a>
+      
+      <div class="mobile-dropdown">
+        <button class="mobile-nav__item mobile-nav__item--dropdown">
+          О НАС
+          <span class="mobile-dropdown__arrow">▾</span>
+        </button>
+        <div class="mobile-dropdown__content">
+          <a href="#" class="mobile-dropdown__item">КОМАНДА</a>
+          <a href="#" class="mobile-dropdown__item">DRUPALGIVE</a>
+          <a href="#" class="mobile-dropdown__item">БЛОГ</a>
+          <a href="#" class="mobile-dropdown__item">КУРСЫ DRUPAL</a>
+        </div>
+      </div>
+      
+      <a href="#" class="mobile-nav__item">ОТЗЫВЫ</a>
+      <a href="#" class="mobile-nav__item">КОНТАКТЫ</a>
+    </nav>
+    
+    <div class="mobile-contacts">
+      <a href="tel:88002222673" class="mobile-phone">8 800 222-26-73</a>
+      <button class="mobile-lang">
+        RU <span class="mobile-lang__arrow">▾</span>
+      </button>
+    </div>
+  </div>
+</div>
     </header>
 <section class="services section" id="services">
   <div class="container">
