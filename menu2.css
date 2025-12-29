@@ -1,0 +1,273 @@
+/* Мобильное меню - скрыто на десктопе */
+.mobile-menu {
+  display: none;
+}
+
+/* Бургер-кнопка */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  width: 30px;
+  height: 24px;
+  position: fixed; /* Изменено с relative на fixed */
+  cursor: pointer;
+  z-index: 1002; /* Увеличьте z-index */
+  padding: 0;
+}
+
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Мобильная панель */
+.mobile-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%; /* Измените на 100% для мобильных */
+  max-width: 300px; /* Максимальная ширина */
+  height: 100vh;
+  background-color: #1a1a1a;
+  z-index: 1001; /* Чуть ниже бургера */
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+
+.mobile-panel.active {
+  right: 0;
+}
+
+.mobile-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-logo img {
+  height: 30px;
+  width: auto;
+}
+
+.mobile-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Мобильная навигация */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.mobile-nav__item {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav__item--dropdown {
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.mobile-dropdown__content {
+  display: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.mobile-dropdown__content.active {
+  display: block;
+}
+
+.mobile-dropdown__item {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 0;
+  display: block;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.mobile-dropdown__item:last-child {
+  border-bottom: none;
+}
+
+.mobile-dropdown__arrow {
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown__arrow.active {
+  transform: rotate(180deg);
+}
+
+/* Мобильные контакты */
+.mobile-contacts {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.mobile-phone {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+.mobile-lang {
+  background: none;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Затемнение фона при открытом меню */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000; /* Между бургером и панелью */
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 1024px) {
+  /* Скрываем десктопное меню */
+  .header__nav {
+    display: none !important; /* Добавьте !important */
+  }
+  
+  /* Показываем мобильное меню */
+  .mobile-menu {
+    display: block;
+    position: fixed; /* Изменено на fixed */
+    top: 20px;
+    right: 20px;
+    z-index: 1003; /* Самый высокий z-index */
+  }
+  
+  .burger {
+    display: block;
+    position: fixed; /* Фиксированная позиция */
+    top: 20px;
+    right: 20px;
+    z-index: 1003; /* Очень высокий z-index */
+  }
+  
+  /* Убедитесь, что header имеет позицию */
+  .header {
+    position: relative;
+  }
+  
+  /* Адаптируем хиро-блок */
+  .header__hero {
+    padding-top: 80px;
+  }
+  
+  .header__content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .header__stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .stat {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .stat {
+    flex: 0 0 100%;
+  }
+  
+  .mobile-panel {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .burger {
+    top: 15px; /* Уменьшите отступ для маленьких экранов */
+    right: 15px;
+  }
+  
+  .mobile-menu {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* Дополнительные исправления для видимости */
+@media (max-width: 1024px) {
+  /* Убедитесь, что видео или оверлей не перекрывают бургер */
+  .header__video,
+  .header__overlay {
+    z-index: 1; /* Низкий z-index */
+  }
+  
+  .header__hero {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Явно покажите бургер */
+  .burger {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
